@@ -1,0 +1,585 @@
+<!DOCTYPE html PUBLIC
+"-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+ 
+<head>
+ 
+<!---TITLE--->
+<title>{Title}</title>
+ 
+<!---FAVICON--->
+<link rel="shortcut icon" href="http://media.tumblr.com/tumblr_lkl6zcapiZ1qfamg6.png">
+ 
+<!---RSS FEED--->
+<link rel="alternate" type="application/rss+xml" href="{RSS}">
+ 
+<!---DESCRIPTION--->
+{block:Description}
+    <meta name="description" content="{MetaDescription}"/>
+{/block:Description}
+
+<!---Infinite Scrolling--->
+<meta name="if:Infinite Scroll" content="0">
+ 
+<!---COLORS--->
+<meta name="color:Background" content="#ffffff" />
+<meta name="color:Font" content="#b6b5b5" />
+<meta name="color:Link" content="#b8b8b8" />
+<meta name="color:Link Hover" content="#f0e7e1" />
+<meta name="color:Scrollbar" content="#b8b8b8" />
+<meta name="color:title" content="#74E500" />
+<meta name="color:Borders" content="#000000" />
+ 
+<!---LINKS--->
+<meta name="text:Link one Title" content=""/>
+<meta name="text:Link one" content="" />
+<meta name="text:Link Three Title" content=""/>
+<meta name="text:Link Three" content=""/>
+<meta name="text:Link Four Title" content=""/>
+<meta name="text:Link Four" content=""/>
+<meta name="text:Link two Title" content=""/>
+<meta name="text:Link two" content=""/>
+<meta name="text:Link five Title" content=""/>
+<meta name="text:Link five" content=""/>
+ 
+<!---IMAGES--->
+<meta name="image:Sidebar" content="1"/>
+<meta name="if:Show sidebar photo" content="0"/>
+
+<!---Google Fonts--->
+<meta name="text:Google Web Font name" content='Open Sans'/>
+<link href='http://fonts.googleapis.com/css?family={text:Google Web Font name}' rel='stylesheet' type='text/css'>
+
+<!---Fonts--->
+<link href='http://fonts.googleapis.com/css?family=Montserrat+Alternates' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Metamorphous' rel='stylesheet' type='text/css'>
+ 
+<style type="text/css">
+
+ 
+/*---WEBKIT SCROLLBAR---*/
+::selection {background: #fff; color:{color:selection};}
+::-moz-selection {background: #fff; color:{color:selection};}
+::-webkit-selection {background: #fff; color:{color:selection};}
+ 
+::-webkit-scrollbar-thumb:vertical {background-color:{color:scrollbar};
+height:100px;}
+ 
+::-webkit-scrollbar { height:10px;width:5px; background-color:#fff;}
+ 
+ 
+/*---BODY---*/
+body {
+    font-style:none;
+        background:{color:Background};
+        margin:0px; 
+        color:{color:Font};
+        font-family:'{text:Google Web Font name}', 'Metamorphous', sans-serif;
+        font-size:11px;
+        line-height:100%;
+}
+ 
+blockquote {
+        border-left:1px solid {color:Borders};
+        padding-left:2px;
+        margin:5px;
+}
+ 
+a {
+        color:{color:Link}
+}
+ 
+a {
+        text-decoration:none;
+    text-transform:uppercase;
+        -webkit-transition:all 0.5s ease-in-out;
+        -moz-transition:all 0.5s ease-in-out;
+        -o-transition:all 0.5s ease-in-out;
+        -ms-transition:all 0.5s ease-in-out;
+        -transition:all 0.5s ease-in-out;
+}
+ 
+a:hover {
+        color:{color:Link Hover}
+}
+ 
+img {
+        max-height:100%;
+}
+ 
+h1 , h2 {
+        font-family:'Metamorphous', sans-serif;
+        text-transform:none;
+        font-size:13px;
+        line-height:30px;
+        letter-spacing:0px;
+        text-align:center;
+        font-style:none;
+}
+ 
+/*---ENTRIES/POSTS---*/
+#entry {
+        width:500px;
+        margin-top:50px;
+}
+ 
+#posts {
+        width:500px;
+        padding-bottom:100px;
+        font-style:none;
+    border:0px solid {color:Borders};
+        padding:15px;
+    margin-left:400px;
+        margin-bottom:50px;
+}
+
+
+ 
+/* --- SIDEBAR ---*/
+div#sidebar{
+position:fixed !important;
+left:130px;
+width: 250px;
+top: 5px;
+height:auto;
+border:1px solid {color:Borders};
+padding: 6px;
+letter-spacing:0px;
+opacity:1;
+z-index:9;
+-webkit-transition: all 0.5s linear;
+-moz-transition: all 0.5s linear;
+transition: all 0.5s linear;
+position: fixed;
+overflow: hidden;
+background-color: {color:Background};
+ 
+ 
+}
+ 
+#nav {
+        position:fixed;
+        overflow:hidden;
+        margin-top:150px;
+        margin-left:315px;
+}
+ 
+
+ 
+.blogtitle a {color:{color:title};}
+.blogtitle{
+ 
+font-family: 'Metamorphous', sans-serif;
+font-size: 40px;
+line-height:40px;
+text-align: center;
+text-decoration: none !important;
+}
+ 
+#description{
+ 
+line-height:17px;
+    padding:5.5px;
+    text-align:center;
+    color:{color:Font};
+    background:transparent;
+    opacity:0.8;
+    font-size:11px;
+}
+ 
+.linkss a{color:{color:Link};}
+.linkss {
+width:56px;
+background-color: transparent;
+-webkit-transition: all 0.3s ease-out; -moz-transition: all 0.3s ease-out; transition: all 0.3s ease-out;margin-top:5px;
+ 
+opacity:1;
+text-align:center;
+display: inline-block;text-transform:uppercase;
+-webkit-transition-duration: .6s;
+ 
+text-decoration: none !important;
+color:{color:Link};
+}
+ 
+.linkss:hover {
+ 
+color:{color:Link Hover};
+background-color: {color:Background};
+-webkit-transition: all 0.3s ease-out; -moz-transition: all 0.3s ease-out; transition: all 0.3s ease-out;
+ 
+text-decoration: none !important;
+ 
+}
+ 
+/*---ASKS/INFO---*/
+#questions {
+        background-color:{color:Background};
+        color:{color:Font};
+        margin-left:0px;
+        padding:5px;
+        margin-top:5px;
+        margin-bottom:5px;
+        font-family: 'Metamorphous', sans-serif;
+        font-size:10px;
+        font-style:normal;
+        text-align:center;
+}
+ 
+#answers {
+        background-color:{color:Background};
+        color:{color:Font};
+        padding:2px;
+        font-family: 'Metamorphous', sans-serif;
+        font-size:10px;
+        font-style:normal;
+        text-align:justify;
+}
+ 
+.note {
+        padding:0px 20px 0px 20px;
+        background-color:{color:Background};
+        text-transform:lowercase;
+        letter-spacing:0px;
+        font-size: 11px;
+        font-style:normal;
+        text-align:left;
+        line-height:120%;
+}
+   
+.note li {
+        list-style-type:none;
+        padding:5px 25px 5px 25px;
+        text-align:left;
+        margin-right:30px;
+        margin-top:-50px;
+}
+ 
+#info {
+        font-family: 'Metamorphous', sans-serif;
+        text-align:center;
+        margin-top:10px;
+        padding-top:10px;
+        padding:0px;
+        padding-bottom:1px;
+        text-transform:uppercase;
+        font-style:none;
+        font-size:10px;
+        line-height:100%;
+}
+ 
+#RebloggedFrom {
+        font-family:calibri;
+        text-align:center;
+        margin-top:-5px;
+        padding-bottom:0px;
+        text-transform:uppercase;
+        font-style:none;
+        font-size:10px;
+}
+ 
+/*---TAGS---*/
+#tags {
+        font-family: 'Metamorphous', sans-serif;
+        text-align:center;
+        margin-top:0px;
+        padding-bottom:0px;
+        text-transform:uppercase;
+        font-style:none;
+        font-size:10px;
+}
+ 
+/*---PAGINATION---*/
+#pagination {
+        font-size:10px;
+        margin-top:5px;
+        margin-left:78px;
+        font-family: '{text:Google Web Font name}', 'Metamorphous', sans-serif;
+        font-style:normal;
+        text-align:center;
+        width:50px
+        text-transform:uppercase;
+        letter-spacing:1px;
+}
+ 
+/*---CREDIT---*/
+#cred {
+        position:fixed;
+    color:{color:Font};
+        bottom:15px;
+        right:15px;
+        font-size:8px;
+        padding:5px;
+        text-transform:uppercase;
+        border:1px solid; padding: 2px 3px 2px 3px;
+        border-color: {color:Borders}
+}
+ 
+ /*---Online users counter---*/
+a.btn{position:absolute;z-index:999999999999;white-space:nowrap;outline:0;text-decoration:none;cursor:pointer;overflow:hidden;font:600 12px/18px "Helvetica Neue","HelveticaNeue",Helvetica,Arial,sans-serif;height:20px;padding:0 5px;-webkit-font-smoothing:antialiased;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;-o-box-sizing:border-box;box-sizing:border-box;-webkit-transition-property:padding;-moz-transition-property:padding;-ms-transition-property:padding;-o-transition-property:padding;transition-property:padding;-webkit-transition-duration:.1s;-moz-transition-duration:.1s;-ms-transition-duration:.1s;-o-transition-duration:.1s;transition-duration:.1s;-webkit-transition-timing-function:ease;-moz-transition-timing-function:ease;-ms-transition-timing-function:ease;-o-transition-timing-function:ease;transition-timing-function:ease}.btn{color:#fff;border:1px solid rgba(0,0,0,0.18);background:rgba(0,0,0,0.38);text-shadow:1px 1px 0 rgba(0,0,0,0.08)}a.btn,a.btn:hover{color:white!important}.btn{margin-bottom:5px;color:#fff;border:1px solid rgba(0,0,0,0.18);background:rgba(0,0,0,0.38);text-shadow:1px 1px 0 rgba(0,0,0,0.08);-webkit-border-radius:2px;-moz-border-radius:2px;border-radius:2px}.btn:hover::after,.btn:focus::after{background:rgba(255,255,255,0.09);color:white}.btn:active::after{background:rgba(255,255,255,0.18) color:white}.btn_label.show{display:block}.btn::after{position:absolute;top:0;right:0;bottom:0;left:0;content:'';-webkit-border-radius:inherit;-moz-border-radius:inherit;border-radius:inherit}.btn.icon::before{display:block;content:'';position:absolute;top:0;left:0;bottom:0;width:20px;border-radius:inherit;background:url('http://static.tumblr.com/tpqedpr/cQ1mbwb60/de.png') 0 0 no-repeat}.btn.theme::before{background-position:0 -0px}.btn img{width:15px}.btn.icon{padding-left:20px}.btn:active::after {background:rgba(255,255,255,0.18)}.clear {clear: both;} #pagination {display: all;}
+
+ 
+/*---END CSS---*/
+ 
+{CustomCSS}</style>
+    
+    {block:IfInfiniteScroll}
+<script type="text/javascript" src="http://codysherman.com/tools/infinite-scrolling/code"></script>
+{/block:IfInfiniteScroll}
+    
+    <!---Hover Rainbow--->
+    
+    
+    <!---IE error message--->
+    <style type="text/css">
+#IEmessage {display:none;}
+</style>
+<!--[if IE]>
+<link rel="stylesheet" href="http://assets.tumblr.com/stylesheets/compressed/status_blue.css" type="text/css" media="screen" charset="utf-8">
+<style type="text/css">
+body {overflow:hidden;}
+hr, address, div, p, h1, h2, h3, h4, h5, span, img, iframe#tumblr_controls {display:none;}
+#IEmessage, #IEmessage div, #IEmessage h1, #IEmessage p {display:block !important;}
+</style>
+<![endif]-->
+    
+
+</head>
+<body>
+
+<!--[if IE]>
+<table id="IEmessage" height="100%" width="100%"><tr><td align="center" valign="middle">
+<h1 id="l10n_title">
+ 
+We're sorry
+ 
+</h1><div class="sorry" style="width:535px;"><p id="l10n_sorry">
+ 
+Our servers are over capacity and certain pages may be temporarily unavailable. We're working quickly to resolve the issue.
+ 
+</p></div></td></tr></table><script type="text/javascript" language="javascript">var status_code = '503'</script><script type="text/javascript" language="javascript" src="http://assets.tumblr.com/languages/errors.js"></script>
+<![endif]-->
+ 
+<!---SIDEBAR--->
+<div id="sidebar">
+ 
+ 
+<center><span class="blogtitle"><a href="/">{Title}</a>
+</span><center>{block:ifshowsidebarphoto}<center><a title="" href="/"><img src="{image:Sidebar}" width=240px height=auto ></a></center>{/block:ifshowsidebarphoto}
+ 
+<center><div id="description">{Description}<br><div style="border-top:1px solid {color:Link};"></div>
+   
+    <span class="linkss"><a href="/">home</a> </span>
+   
+{block:IfLinkOneTitle} <span class="linkss"> <a href="{text:Link One}"> {text:Link One Title}</a> </span> {/block:ifLinkOneTitle}
+ 
+{block:IfLinkTwoTitle} <span class="linkss"> <a href="{text:Link Two}">{text:Link Two Title}</a> </span> {/block:ifLinkTwoTitle}
+ 
+{block:IfLinkThreeTitle}<span class="linkss"> <a href="{text:Link Three}">{text:Link Three Title}</a> </span> {/block:ifLinkThreeTitle}
+ 
+{block:IfLinkFourTitle} <span class="linkss"> <a href="{text:Link Four}">{text:Link Four Title}</a> </span> {/block:ifLinkFourTitle}
+ 
+{block:IfLinkFiveTitle} <span class="linkss"> <a href="{text:Link Five}">{text:Link Five Title}</a> </span> {/block:ifLinkFiveTitle}
+ 
+ {block:IfNotInfiniteScroll}
+<div class="pagination">
+{block:Pagination}
+                <div id="pagination">
+                        {block:PreviousPage}
+                                <a href="{PreviousPage}">Back</a>
+                        {/block:PreviousPage}
+                       
+                        {block:NextPage}
+                                <a href="{NextPage}">Next</a>
+                        {/block:NextPage}</div>
+        {/block:Pagination}</div>
+ 
+{block:HasPages}
+        {block:Pages}
+                <a href="{URL}">{Label}</a>
+        {/block:Pages}
+{/block:HasPages}
+    
+ 
+</div>
+</div>
+{/block:IfNotInfiniteScroll}
+ 
+</div>
+ 
+</div>
+ 
+ 
+ 
+<div class="left">
+<!---END SIDEBAR--->
+ 
+<!---POSTS--->
+<div id="entry">
+<div class="autopagerize_page_element">
+        {block:Posts}
+                <div id="posts">
+ 
+<!---TEXT POSTS--->
+                        {block:Text}
+                                <h1>
+                                        {block:Title}
+                                                {Title}
+                                        {/block:Title}
+                                </h1>
+                                                {Body}
+                        {/block:Text}
+ 
+{block:blockquote}
+{/block:blockquote}
+ 
+<!---PHOTO POSTS--->    
+            {block:Photo}
+                                <center>
+                                        {LinkOpenTag}
+                                                <img src="{PhotoURL-500}" alt="{PhotoAlt}"/>
+                                        {LinkCloseTag}
+                                </center>
+                                        {block:Caption}
+                                                {Caption}
+                                        {/block:Caption}
+                        {/block:Photo}
+           
+<!---PHOTOSET POSTS--->
+                        {block:Photoset}
+                                <center>
+                                        {Photoset-500}
+                                </center>
+                                        {block:Caption}
+                                                <i>{Caption}</i>
+                                        {/block:Caption}
+                        {/block:Photoset}
+ 
+<!---QUOTE POSTS--->
+                        {block:Quote}
+                                {Quote}<p>
+                                        <center>
+                        {block:Source}
+                                                 —{Source}
+                                        {/block:Source}
+                                </center>
+            {/block:Quote}
+ 
+<!---LINK POSTS--->
+                        {block:Link}
+                                <h1>
+                                        <a href="{URL}"{Target}>{Name}</a>
+                                </h1>
+                                        {block:Description}
+                                                {Description}
+                                        {/block:Description}
+                        {/block:Link}
+<!---CHAT POSTS--->
+                        {block:Chat}
+                                {block:Title}
+                                        <h1>
+                                                {Title}
+                                        </h1>
+                                {/block:Title}
+                                        {block:Lines}
+                                                {block:Label}
+                                                        <b>{Label}</b>
+                                                {/block:Label}
+                                                        {Line}<br>
+                                        {/block:Lines}
+                        {/block:Chat}
+<!---AUDIO POSTS--->
+                        {block:Audio}
+                                {AudioPlayerBlack}
+                                        {block:Caption}
+                                                {Caption}
+                                        {/block:Caption}
+                        {/block:Audio}
+<!---VIDEO POSTS--->
+                        {block:Video}
+                                {Video-500}
+                                        {block:Caption}
+                                                {Caption}
+                                        {/block:Caption}
+                                {/block:Video}
+<!---ASK POSTS--->
+                        {block:Answer}
+                                <div id="questions">
+                                        <a href="{askerURL}"><b>{Asker}</b> whispered:
+                                                {Question}
+                                </div>
+                                <div id="answers">{Answer}</div>
+                        {/block:answer}
+ 
+<!---END POSTS--->
+ 
+<!---POST INFO--->
+                <div id="info">
+ 
+<!---DATE--->
+                        {block:Date}
+                                <a href="{Permalink}">{TimeAgo},</a>
+                        {/block:Date}
+<!---NOTE COUNT--->
+                        {block:NoteCount}
+                                <a href="{Permalink}"> with {NoteCountWithLabel}</a>.
+                        {/block:NoteCount}
+<!---VIA--->
+                        {block:RebloggedFrom}
+                                <a href="{ReblogParentURL}"> From {ReblogParentName}</a>.
+                        {/block:RebloggedFrom}
+ 
+<!---SOURCE--->
+                        {block:ContentSource}
+                                <a href="{SourceURL}">{ReblogRootName}</a>
+                        {/block:ContentSource}
+                </div>
+ 
+<!---END POST INFO--->
+ 
+<!---TAGS--->
+                <div id="tags">
+                        {block:HasTags}
+                                {block:Tags}
+                                        <a href="{TagURL}">#{Tag} </a>&nbsp;
+                                {/block:Tags}
+                        {/block:HasTags}
+                </div>
+ 
+<!---POST NOTES--->
+                        {block:PostNotes}
+                                {PostNotes}
+                        {/block:PostNotes}
+                </div>
+                
+
+ 
+<!---CREDIT--->
+                <div id="cred">
+                        <a title="forever-stuck-in--neverland"href="/fabulous-theme">CREDIT</a>
+                </div>
+                
+                {/block:Posts}
+                </div>
+                
+                </div>
+
+<!---Online users counter--->
+<script language="JavaScript">
+// FHS Tumblr Online Counter
+var height = '28'; 
+var ref = (''+document.referrer+'');
+var w_h = window.screen.width + " x " + window.screen.height;
+document.write('<script src="http://s1.freehostedscripts.net/ocounter.php?site=ID4313914&s=1&h=' + height + '&e1=Truest Believer&e2=True Believers&r=' + ref + '&m=0&wh=' + w_h + '"><\/script>'); 
+</script>
+
+<!---Online hits counter--->
+<script language="JavaScript">
+// FHS Text Counter
+var height = '52'; 
+document.write('<script src="http://s1.freehostedscripts.net/ocount.php?site=ID2644968&s=1&h=' + height + '&name=Have Seen Neverland"><\/script>'); 
+</script>
+
+</body>
+</html>
